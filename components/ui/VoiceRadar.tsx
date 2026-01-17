@@ -219,11 +219,11 @@ export function VoiceRadar({
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             >
-              {/* Quadrants subtils */}
-              <rect x="0" y="50" width="50" height="50" fill="rgba(100,120,140,0.035)" /> {/* Institutionnelle */}
-              <rect x="50" y="50" width="50" height="50" fill="rgba(200,160,120,0.035)" /> {/* Rassurante */}
-              <rect x="0" y="0" width="50" height="50" fill="rgba(80,90,100,0.045)" /> {/* Autoritaire */}
-              <rect x="50" y="0" width="50" height="50" fill="rgba(220,140,80,0.045)" /> {/* Engagée */}
+              {/* Quadrants avec couleurs accentuees */}
+              <rect x="0" y="50" width="50" height="50" fill="rgba(59,130,246,0.08)" /> {/* Institutionnelle - bleu froid */}
+              <rect x="50" y="50" width="50" height="50" fill="rgba(239,68,68,0.06)" /> {/* Rassurante - rouge chaud */}
+              <rect x="0" y="0" width="50" height="50" fill="rgba(59,130,246,0.12)" /> {/* Autoritaire - bleu froid intense */}
+              <rect x="50" y="0" width="50" height="50" fill="rgba(239,68,68,0.10)" /> {/* Engagee - rouge chaud intense */}
 
               {/* Axes principaux */}
               <line x1="50" y1="0" x2="50" y2="100" stroke="var(--border)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
@@ -296,7 +296,12 @@ export function VoiceRadar({
               {feedback.adjectives.map((adj) => (
                 <span
                   key={adj}
-                  className="px-2.5 py-1 text-sm bg-[var(--background)] border border-[var(--border)] rounded-[var(--radius-sm)] text-[var(--foreground)]"
+                  className={cn(
+                    'px-2.5 py-1 text-sm rounded-[var(--radius-sm)]',
+                    adj === 'Froid' && 'bg-blue-100 text-blue-700 border border-blue-200',
+                    adj === 'Chaud' && 'bg-red-100 text-red-700 border border-red-200',
+                    adj !== 'Froid' && adj !== 'Chaud' && 'bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)]'
+                  )}
                 >
                   {adj}
                 </span>
