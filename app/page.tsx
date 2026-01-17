@@ -8,11 +8,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <VoiceGrid
-        voices={featuredVoices}
-        title="Featured Voice Talent"
-        subtitle="Discover our top-rated voice professionals"
-      />
+      <VoiceGrid voices={featuredVoices} />
     </>
   );
 }

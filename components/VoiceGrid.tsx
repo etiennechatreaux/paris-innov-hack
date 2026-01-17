@@ -18,7 +18,7 @@ interface VoiceGridProps {
 
 export function VoiceGrid({ voices, title, subtitle }: VoiceGridProps) {
   return (
-    <section className="py-16">
+    <section className="pt-8 pb-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {(title || subtitle) && (
           <div className="mb-10">

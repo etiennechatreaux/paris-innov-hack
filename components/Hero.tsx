@@ -7,23 +7,33 @@ export function Hero() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--accent)] to-transparent h-[600px] -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-24 md:pt-28 md:pb-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-sm font-medium bg-white border border-[var(--border)] rounded-[var(--radius-full)] shadow-[var(--shadow-sm)]">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            <span className="text-[var(--muted)]">500+ voices available now</span>
+          {/* Stats Bar */}
+          <div className="inline-flex items-center gap-6 px-6 py-3 mb-6 text-sm font-medium bg-white border border-[var(--border)] rounded-[var(--radius-full)] shadow-[var(--shadow-sm)]">
+            <div className="flex items-center gap-3">
+              <span className="text-[var(--muted)]">Average pay</span>
+              <span className="text-[var(--foreground)] font-semibold">150$/hour</span>
+            </div>
+            <div className="w-px h-5 bg-[var(--border)]" />
+            <div className="flex items-center gap-3">
+              <span className="text-[var(--muted)]">Voice recorded</span>
+              <span className="text-[var(--foreground)] font-semibold">+ 20000</span>
+            </div>
+            <div className="w-px h-5 bg-[var(--border)]" />
+            <div className="flex items-center gap-3">
+              <span className="text-[var(--muted)]">Daily payouts</span>
+              <span className="text-[var(--foreground)] font-semibold">+ 150000$</span>
+            </div>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--foreground)] leading-[1.1]">
-            Shape the future
-            <br />
-            <span className="text-[var(--muted)]">of voice</span>
+            Shape the future of voice
           </h1>
 
           {/* Subheadline */}
-          <p className="mt-6 text-lg md:text-xl text-[var(--muted)] max-w-2xl mx-auto">
+          <p className="mt-6 mb-4 text-lg md:text-xl text-[var(--muted)] max-w-2xl mx-auto">
             Connect with professional voice talent from around the world.
             Commercials, audiobooks, e-learning, and more.
           </p>
