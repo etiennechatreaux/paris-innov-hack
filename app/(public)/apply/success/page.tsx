@@ -36,8 +36,8 @@ export default function SuccessPage() {
         <Link href="/voices">
           <Button variant="outline">Browse Voice Talent</Button>
         </Link>
-        <Link href="/">
-          <Button>Back to Home</Button>
+        <Link href="/home">
+          <Button>Go to Dashboard</Button>
         </Link>
       </div>
     </div>

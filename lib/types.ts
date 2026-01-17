@@ -8,6 +8,7 @@ export interface Voice {
   audioSamplePath: string;
   description: string;
   gender: string;
+  age: number;
   avatarUrl: string | null;
   createdAt: Date;
   updatedAt: Date;

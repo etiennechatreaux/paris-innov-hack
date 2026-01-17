@@ -8,6 +8,7 @@ interface PageProps {
     language?: string;
     gender?: string;
     style?: string;
+    age?: string;
     minPrice?: string;
     maxPrice?: string;
   }>;
@@ -33,6 +34,19 @@ export default async function VoicesPage({ searchParams }: PageProps) {
     voices = voices.filter((v) =>
       v.styles.toLowerCase().includes(params.style!.toLowerCase())
     );
+  }
+
+  if (params.age) {
+    const ageRange = params.age;
+    if (ageRange === '18-25') {
+      voices = voices.filter((v) => v.age >= 18 && v.age <= 25);
+    } else if (ageRange === '26-35') {
+      voices = voices.filter((v) => v.age >= 26 && v.age <= 35);
+    } else if (ageRange === '36-45') {
+      voices = voices.filter((v) => v.age >= 36 && v.age <= 45);
+    } else if (ageRange === '46+') {
+      voices = voices.filter((v) => v.age >= 46);
+    }
   }
 
   if (params.minPrice) {

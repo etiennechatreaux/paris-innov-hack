@@ -44,7 +44,7 @@ export function Navbar() {
               <Link href="/voices" className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--muted)] transition-colors">
                 Enterprise
               </Link>
-              <Link href="/voices">
+              <Link href="/apply">
                 <Button variant="outline" size="sm" className="bg-gray-100 border-0">
                   Log in
                 </Button>

@@ -36,6 +36,14 @@ const STYLES = [
   { value: 'Podcast', label: 'Podcast' },
 ];
 
+const AGE_RANGES = [
+  { value: '', label: 'All Ages' },
+  { value: '18-25', label: '18-25' },
+  { value: '26-35', label: '26-35' },
+  { value: '36-45', label: '36-45' },
+  { value: '46+', label: '46+' },
+];
+
 export function VoiceFilters() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -92,6 +100,14 @@ export function VoiceFilters() {
         options={STYLES}
         value={searchParams.get('style') || ''}
         onChange={(e) => updateFilter('style', e.target.value)}
+      />
+
+      {/* Age Filter */}
+      <Select
+        label="Age"
+        options={AGE_RANGES}
+        value={searchParams.get('age') || ''}
+        onChange={(e) => updateFilter('age', e.target.value)}
       />
 
       {/* Price Range */}

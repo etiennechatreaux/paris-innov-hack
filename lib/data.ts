@@ -8,6 +8,7 @@ export interface Voice {
   audioSamplePath: string;
   description: string;
   gender: string;
+  age: number;
   avatarUrl: string | null;
   createdAt: Date;
   updatedAt: Date;
@@ -24,6 +25,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/sarah-mitchell.mp3',
     description: 'Warm and engaging voice with over 10 years of experience in commercial and educational content. Known for clear articulation and friendly tone that connects with audiences.',
     gender: 'female',
+    age: 32,
     avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01'),
@@ -38,6 +40,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/marcus-chen.mp3',
     description: 'Deep, authoritative voice perfect for documentaries and narration. Bilingual in English and Mandarin with experience in international productions.',
     gender: 'male',
+    age: 45,
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-02'),
     updatedAt: new Date('2024-01-02'),
@@ -52,6 +55,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/elena-rodriguez.mp3',
     description: 'Versatile trilingual voice artist specializing in character work and commercials. Brings energy and authenticity to every project.',
     gender: 'female',
+    age: 28,
     avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-03'),
     updatedAt: new Date('2024-01-03'),
@@ -66,6 +70,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/james-williams.mp3',
     description: 'Award-winning audiobook narrator with a rich, captivating voice. Specializes in fiction and long-form content with excellent pacing.',
     gender: 'male',
+    age: 52,
     avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-04'),
     updatedAt: new Date('2024-01-04'),
@@ -80,6 +85,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/yuki-tanaka.mp3',
     description: 'Bright, expressive voice ideal for animation and educational content. Native Japanese speaker with perfect American English.',
     gender: 'female',
+    age: 26,
     avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-05'),
     updatedAt: new Date('2024-01-05'),
@@ -94,6 +100,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/david-muller.mp3',
     description: 'Professional bilingual voice with a sophisticated European sound. Extensive experience in corporate and documentary projects.',
     gender: 'male',
+    age: 38,
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-06'),
     updatedAt: new Date('2024-01-06'),
@@ -108,6 +115,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/sofia-laurent.mp3',
     description: 'Elegant French voice with impeccable English. Specializes in literary narration and luxury brand content.',
     gender: 'female',
+    age: 35,
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-07'),
     updatedAt: new Date('2024-01-07'),
@@ -122,6 +130,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/alex-kim.mp3',
     description: 'Fresh, modern voice perfect for podcasts and digital content. Brings authenticity and relatability to every read.',
     gender: 'non-binary',
+    age: 24,
     avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-08'),
     updatedAt: new Date('2024-01-08'),
@@ -136,6 +145,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/isabella-rossi.mp3',
     description: 'Passionate and expressive voice with Italian flair. Excellent for character work and emotive commercial content.',
     gender: 'female',
+    age: 30,
     avatarUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-09'),
     updatedAt: new Date('2024-01-09'),
@@ -150,6 +160,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/thomas-anderson.mp3',
     description: 'Clear, trustworthy voice ideal for educational and documentary content. Known for making complex topics accessible.',
     gender: 'male',
+    age: 41,
     avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-10'),
     updatedAt: new Date('2024-01-10'),
@@ -164,6 +175,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/marie-dubois.mp3',
     description: 'Sophisticated voice with a gentle French accent. Premier choice for literary audiobooks and premium narration.',
     gender: 'female',
+    age: 48,
     avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-11'),
     updatedAt: new Date('2024-01-11'),
@@ -178,6 +190,7 @@ export const voices: Voice[] = [
     audioSamplePath: '/audio/samples/chris-johnson.mp3',
     description: 'Friendly, conversational voice perfect for podcasts and casual commercial content. Great at connecting with younger audiences.',
     gender: 'male',
+    age: 29,
     avatarUrl: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face',
     createdAt: new Date('2024-01-12'),
     updatedAt: new Date('2024-01-12'),

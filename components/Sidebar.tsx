@@ -69,7 +69,7 @@ export function Sidebar() {
   return (
     <aside className="fixed left-0 top-0 h-screen w-48 bg-white border-r border-[var(--border)] flex flex-col py-4 px-3 z-50">
       {/* Logo at top */}
-      <Link href="/home" className="mb-8">
+      <Link href="/" className="mb-8">
         <div className="w-10 h-10 bg-[var(--primary)] rounded-xl flex items-center justify-center">
           <VoxLogo size={24} className="text-white" />
         </div>
