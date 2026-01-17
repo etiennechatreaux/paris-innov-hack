@@ -4,9 +4,17 @@ import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { VoiceRadar } from '@/components/ui/VoiceRadar';
 import { VoiceCard } from '@/components/VoiceCard';
+import { ExploreFilters } from '@/components/ExploreFilters';
 import { voices, Voice } from '@/lib/data';
 
 type ExploreMode = 'profiles' | 'profiler';
+
+function parseAgeRange(range: string): { min: number; max: number } | null {
+  if (!range) return null;
+  if (range === '55+') return { min: 55, max: 100 };
+  const [min, max] = range.split('-').map(Number);
+  return { min, max };
+}
 
 // Selectionne des voix basees sur la position (pseudo-random mais deterministe)
 function getSuggestedVoices(
@@ -27,6 +35,63 @@ export default function ExplorePage() {
   const t = useTranslations('sidebar');
   const [mode, setMode] = useState<ExploreMode>('profiles');
   const [radarPosition, setRadarPosition] = useState({ x: 0, y: 0 });
+
+  // Filter states
+  const [search, setSearch] = useState('');
+  const [gender, setGender] = useState('');
+  const [language, setLanguage] = useState('');
+  const [style, setStyle] = useState('');
+  const [ageRange, setAgeRange] = useState('');
+
+  const clearFilters = () => {
+    setSearch('');
+    setGender('');
+    setLanguage('');
+    setStyle('');
+    setAgeRange('');
+  };
+
+  // Filtered voices
+  const filteredVoices = useMemo(() => {
+    let result = [...voices];
+
+    // Search by name (case-insensitive)
+    if (search) {
+      const searchLower = search.toLowerCase();
+      result = result.filter((v) =>
+        v.name.toLowerCase().includes(searchLower)
+      );
+    }
+
+    // Gender filter
+    if (gender) {
+      result = result.filter((v) => v.gender === gender);
+    }
+
+    // Language filter
+    if (language) {
+      result = result.filter((v) =>
+        v.languages.toLowerCase().includes(language.toLowerCase())
+      );
+    }
+
+    // Style filter
+    if (style) {
+      result = result.filter((v) =>
+        v.styles.toLowerCase().includes(style.toLowerCase())
+      );
+    }
+
+    // Age range filter
+    const ageFilter = parseAgeRange(ageRange);
+    if (ageFilter) {
+      result = result.filter(
+        (v) => v.age >= ageFilter.min && v.age <= ageFilter.max
+      );
+    }
+
+    return result;
+  }, [search, gender, language, style, ageRange]);
 
   const suggestedVoices = useMemo(
     () => getSuggestedVoices(radarPosition, voices, 3),
@@ -63,19 +128,48 @@ export default function ExplorePage() {
 
       {/* Content */}
       {mode === 'profiles' ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {voices.map((voice) => (
-            <VoiceCard
-              key={voice.id}
-              id={voice.id}
-              name={voice.name}
-              avatarUrl={voice.avatarUrl}
-              languages={voice.languages}
-              styles={voice.styles}
-              pricePerHour={voice.pricePerHour}
-              gender={voice.gender}
-            />
-          ))}
+        <div className="space-y-6">
+          {/* Filters */}
+          <ExploreFilters
+            search={search}
+            onSearchChange={setSearch}
+            gender={gender}
+            onGenderChange={setGender}
+            language={language}
+            onLanguageChange={setLanguage}
+            style={style}
+            onStyleChange={setStyle}
+            ageRange={ageRange}
+            onAgeRangeChange={setAgeRange}
+            onClear={clearFilters}
+          />
+
+          {/* Results count */}
+          <div className="text-sm text-[var(--muted)]">
+            {filteredVoices.length} voice{filteredVoices.length !== 1 ? 's' : ''} found
+          </div>
+
+          {/* Grid */}
+          {filteredVoices.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+              {filteredVoices.map((voice) => (
+                <VoiceCard
+                  key={voice.id}
+                  id={voice.id}
+                  name={voice.name}
+                  avatarUrl={voice.avatarUrl}
+                  languages={voice.languages}
+                  styles={voice.styles}
+                  pricePerHour={voice.pricePerHour}
+                  gender={voice.gender}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 text-[var(--muted)]">
+              No voices found matching your criteria.
+            </div>
+          )}
         </div>
       ) : (
         <div className="space-y-8">

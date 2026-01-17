@@ -5,8 +5,8 @@ export interface Payment {
   type: 'Voice Recording' | 'Royalties' | 'Bonus';
   description: string;
   status: 'Paid' | 'Pending' | 'Processing';
-  hours: number;
-  earned: number; // in cents
+  minutes: number;
+  earned: number; // in cents (EUR)
 }
 
 export interface EarningsDataPoint {
@@ -43,7 +43,7 @@ export const mockPayments: Payment[] = [
     type: 'Voice Recording',
     description: 'AI Assistant - Natural Voice Package',
     status: 'Paid',
-    hours: 4.5,
+    minutes: 270,
     earned: 22500,
   },
   {
@@ -52,7 +52,7 @@ export const mockPayments: Payment[] = [
     type: 'Royalties',
     description: 'TechCorp Q4 Usage Royalties',
     status: 'Paid',
-    hours: 0,
+    minutes: 0,
     earned: 15000,
   },
   {
@@ -61,7 +61,7 @@ export const mockPayments: Payment[] = [
     type: 'Voice Recording',
     description: 'E-Learning Module 5 - Advanced Topics',
     status: 'Paid',
-    hours: 3.0,
+    minutes: 180,
     earned: 18000,
   },
   {
@@ -70,7 +70,7 @@ export const mockPayments: Payment[] = [
     type: 'Bonus',
     description: 'Performance Bonus - December',
     status: 'Paid',
-    hours: 0,
+    minutes: 0,
     earned: 10000,
   },
   {
@@ -79,7 +79,7 @@ export const mockPayments: Payment[] = [
     type: 'Voice Recording',
     description: 'Podcast Episode 12 - Tech Trends',
     status: 'Paid',
-    hours: 2.0,
+    minutes: 120,
     earned: 12000,
   },
   {
@@ -88,7 +88,7 @@ export const mockPayments: Payment[] = [
     type: 'Voice Recording',
     description: 'AI Assistant - Custom Prompts',
     status: 'Pending',
-    hours: 5.5,
+    minutes: 330,
     earned: 27500,
   },
   {
@@ -97,7 +97,7 @@ export const mockPayments: Payment[] = [
     type: 'Royalties',
     description: 'E-Learning Platform Usage',
     status: 'Pending',
-    hours: 0,
+    minutes: 0,
     earned: 8500,
   },
   {
@@ -106,7 +106,7 @@ export const mockPayments: Payment[] = [
     type: 'Voice Recording',
     description: 'Podcast Episode 11 - AI Ethics',
     status: 'Processing',
-    hours: 1.5,
+    minutes: 90,
     earned: 9000,
   },
 ];
@@ -144,9 +144,9 @@ export const mockSummary: EarningsSummary = {
 
 // Utility functions
 export function formatCurrency(cents: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('fr-FR', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'EUR',
   }).format(cents / 100);
 }
 
