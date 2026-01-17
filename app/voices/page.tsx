@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/db';
 import { VoiceCard } from '@/components/VoiceCard';
 import { VoiceFilters } from '@/components/VoiceFilters';
+import { Voice } from '@prisma/client';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,7 +18,7 @@ interface PageProps {
 export default async function VoicesPage({ searchParams }: PageProps) {
   const params = await searchParams;
 
-  let voices = await prisma.voice.findMany({
+  let voices: Voice[] = await prisma.voice.findMany({
     orderBy: { createdAt: 'desc' },
   });
 
