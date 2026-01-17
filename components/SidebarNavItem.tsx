@@ -16,19 +16,14 @@ export function SidebarNavItem({ href, icon, label, isActive }: SidebarNavItemPr
     <Link
       href={href}
       className={cn(
-        'w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 group relative',
+        'w-full h-10 rounded-xl flex items-center gap-3 px-3 transition-all duration-200',
         isActive
-          ? 'bg-[var(--primary)] text-white'
+          ? 'bg-[var(--accent)] text-[var(--foreground)]'
           : 'text-[var(--muted)] hover:bg-[var(--accent)] hover:text-[var(--foreground)]'
       )}
-      title={label}
     >
       {icon}
-
-      {/* Tooltip on hover */}
-      <span className="absolute left-14 px-2 py-1 bg-[var(--primary)] text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
-        {label}
-      </span>
+      <span className="text-sm font-medium">{label}</span>
     </Link>
   );
 }

@@ -54,14 +54,12 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
             <div className="flex items-center gap-3">
-              <Link href="/apply">
-                <Button variant="outline" size="sm">
-                  {t('joinAsTalent')}
-                </Button>
+              <Link href="/apply" className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--muted)] transition-colors">
+                Enterprise
               </Link>
               <Link href="/voices">
-                <Button size="sm">
-                  {t('findVoiceTalent')}
+                <Button variant="outline" size="sm" className="bg-gray-100 border-0">
+                  Log in
                 </Button>
               </Link>
             </div>
