@@ -210,20 +210,6 @@ export default function ApplyPage() {
               />
             </div>
 
-            {/* Audio Sample */}
-            <div className="space-y-1.5">
-              <label className="block text-sm font-medium text-[var(--foreground)]">
-                Voice Sample (MP3, max 10MB)
-              </label>
-              <input
-                name="audioSample"
-                type="file"
-                accept="audio/mp3,audio/mpeg"
-                className="w-full text-sm text-[var(--muted)] file:mr-4 file:py-2 file:px-4 file:rounded-[var(--radius-sm)] file:border-0 file:text-sm file:font-medium file:bg-[var(--accent)] file:text-[var(--accent-foreground)] hover:file:bg-[var(--border)] file:cursor-pointer"
-                required
-              />
-            </div>
-
             {/* Voice Recordings */}
             <div className="space-y-3 pt-4 border-t border-[var(--border)]">
               <div>
@@ -301,6 +287,19 @@ export default function ApplyPage() {
                   );
                 })}
               </div>
+            </div>
+
+            {/* Audio Sample (optional) */}
+            <div className="space-y-1.5">
+              <label className="block text-sm font-medium text-[var(--foreground)]">
+                Or upload an existing sample (MP3, max 10MB)
+              </label>
+              <input
+                name="audioSample"
+                type="file"
+                accept="audio/mp3,audio/mpeg"
+                className="w-full text-sm text-[var(--muted)] file:mr-4 file:py-2 file:px-4 file:rounded-[var(--radius-sm)] file:border-0 file:text-sm file:font-medium file:bg-[var(--accent)] file:text-[var(--accent-foreground)] hover:file:bg-[var(--border)] file:cursor-pointer"
+              />
             </div>
 
             {/* Submit */}

@@ -5,6 +5,12 @@
     "joinAsTalent": "Join as Talent",
     "findVoiceTalent": "Find Voice Talent"
   },
+  "sidebar": {
+    "home": "Home",
+    "explore": "Explore",
+    "earnings": "Earnings",
+    "profile": "Profile"
+  },
   "hero": {
     "averagePay": "Average pay",
     "voiceRecorded": "Voice recorded",

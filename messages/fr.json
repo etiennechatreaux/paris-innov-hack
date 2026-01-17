@@ -5,6 +5,12 @@
     "joinAsTalent": "Devenir talent",
     "findVoiceTalent": "Trouver un talent"
   },
+  "sidebar": {
+    "home": "Accueil",
+    "explore": "Explorer",
+    "earnings": "Revenus",
+    "profile": "Profil"
+  },
   "hero": {
     "averagePay": "Salaire moyen",
     "voiceRecorded": "Voix enregistrées",
