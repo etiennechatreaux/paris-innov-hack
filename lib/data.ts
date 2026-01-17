@@ -10,8 +10,8 @@ export interface Voice {
   gender: string;
   age: number;
   avatarUrl: string | null;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export const voices: Voice[] = [
@@ -27,8 +27,8 @@ export const voices: Voice[] = [
     gender: 'female',
     age: 32,
     avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-01'),
-    updatedAt: new Date('2024-01-01'),
+    createdAt: '2024-01-01',
+    updatedAt: '2024-01-01',
   },
   {
     id: 'marcus-chen',
@@ -42,8 +42,8 @@ export const voices: Voice[] = [
     gender: 'male',
     age: 45,
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-02'),
-    updatedAt: new Date('2024-01-02'),
+    createdAt: '2024-01-02',
+    updatedAt: '2024-01-02',
   },
   {
     id: 'elena-rodriguez',
@@ -57,8 +57,8 @@ export const voices: Voice[] = [
     gender: 'female',
     age: 28,
     avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-03'),
-    updatedAt: new Date('2024-01-03'),
+    createdAt: '2024-01-03',
+    updatedAt: '2024-01-03',
   },
   {
     id: 'james-williams',
@@ -72,8 +72,8 @@ export const voices: Voice[] = [
     gender: 'male',
     age: 52,
     avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-04'),
-    updatedAt: new Date('2024-01-04'),
+    createdAt: '2024-01-04',
+    updatedAt: '2024-01-04',
   },
   {
     id: 'yuki-tanaka',
@@ -87,8 +87,8 @@ export const voices: Voice[] = [
     gender: 'female',
     age: 26,
     avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-05'),
-    updatedAt: new Date('2024-01-05'),
+    createdAt: '2024-01-05',
+    updatedAt: '2024-01-05',
   },
   {
     id: 'david-muller',
@@ -102,8 +102,8 @@ export const voices: Voice[] = [
     gender: 'male',
     age: 38,
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-06'),
-    updatedAt: new Date('2024-01-06'),
+    createdAt: '2024-01-06',
+    updatedAt: '2024-01-06',
   },
   {
     id: 'sofia-laurent',
@@ -117,8 +117,8 @@ export const voices: Voice[] = [
     gender: 'female',
     age: 35,
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-07'),
-    updatedAt: new Date('2024-01-07'),
+    createdAt: '2024-01-07',
+    updatedAt: '2024-01-07',
   },
   {
     id: 'alex-kim',
@@ -132,8 +132,8 @@ export const voices: Voice[] = [
     gender: 'non-binary',
     age: 24,
     avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-08'),
-    updatedAt: new Date('2024-01-08'),
+    createdAt: '2024-01-08',
+    updatedAt: '2024-01-08',
   },
   {
     id: 'isabella-rossi',
@@ -147,8 +147,8 @@ export const voices: Voice[] = [
     gender: 'female',
     age: 30,
     avatarUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-09'),
-    updatedAt: new Date('2024-01-09'),
+    createdAt: '2024-01-09',
+    updatedAt: '2024-01-09',
   },
   {
     id: 'thomas-anderson',
@@ -162,8 +162,8 @@ export const voices: Voice[] = [
     gender: 'male',
     age: 41,
     avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-10'),
-    updatedAt: new Date('2024-01-10'),
+    createdAt: '2024-01-10',
+    updatedAt: '2024-01-10',
   },
   {
     id: 'marie-dubois',
@@ -177,8 +177,8 @@ export const voices: Voice[] = [
     gender: 'female',
     age: 48,
     avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-11'),
-    updatedAt: new Date('2024-01-11'),
+    createdAt: '2024-01-11',
+    updatedAt: '2024-01-11',
   },
   {
     id: 'chris-johnson',
@@ -192,7 +192,7 @@ export const voices: Voice[] = [
     gender: 'male',
     age: 29,
     avatarUrl: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face',
-    createdAt: new Date('2024-01-12'),
-    updatedAt: new Date('2024-01-12'),
+    createdAt: '2024-01-12',
+    updatedAt: '2024-01-12',
   },
 ];

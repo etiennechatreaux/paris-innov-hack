@@ -7,10 +7,16 @@ interface ProfileCardProps {
   email: string;
   avatarUrl: string | null;
   isVerified: boolean;
-  memberSince: Date;
+  memberSince: string;
   completedContracts: number;
   rating: number;
 }
+
+const formatDate = (dateStr: string) => {
+  const date = new Date(dateStr);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${months[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+};
 
 export function ProfileCard({
   name,
@@ -84,12 +90,7 @@ export function ProfileCard({
       <div className="border-t border-[var(--border)] pt-4 space-y-3">
         <div className="flex justify-between text-sm">
           <span className="text-[var(--muted)]">Member since</span>
-          <span className="font-medium">
-            {memberSince.toLocaleDateString('en-US', {
-              month: 'short',
-              year: 'numeric',
-            })}
-          </span>
+          <span className="font-medium">{formatDate(memberSince)}</span>
         </div>
         <div className="flex justify-between text-sm">
           <span className="text-[var(--muted)]">Completed contracts</span>

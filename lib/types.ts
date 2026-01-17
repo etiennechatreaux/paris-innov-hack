@@ -10,8 +10,8 @@ export interface Voice {
   gender: string;
   age: number;
   avatarUrl: string | null;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface VoiceFilters {

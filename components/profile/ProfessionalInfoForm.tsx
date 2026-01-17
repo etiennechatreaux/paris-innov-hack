@@ -182,7 +182,7 @@ export function ProfessionalInfoForm({
             </div>
           ) : (
             <p className="text-[var(--foreground)] text-lg font-semibold">
-              ${formData.pricePerHour.toLocaleString()}/hr
+              ${formData.pricePerHour}/hr
             </p>
           )}
         </div>
