@@ -1,13 +1,11 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { prisma } from '@/lib/db';
+import { voices } from '@/lib/data';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { AudioPlayer } from '@/components/AudioPlayer';
 import { RequestVoiceModal } from '@/components/RequestVoiceModal';
 import { formatPrice, parseJsonArray } from '@/lib/utils';
-
-export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -16,9 +14,7 @@ interface PageProps {
 export default async function VoiceProfilePage({ params }: PageProps) {
   const { id } = await params;
 
-  const voice = await prisma.voice.findUnique({
-    where: { id },
-  });
+  const voice = voices.find((v) => v.id === id);
 
   if (!voice) {
     notFound();

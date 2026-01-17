@@ -1,20 +1,15 @@
 import { Hero } from '@/components/Hero';
 import { VoiceGrid } from '@/components/VoiceGrid';
-import { prisma } from '@/lib/db';
+import { voices } from '@/lib/data';
 
-export const dynamic = 'force-dynamic';
-
-export default async function HomePage() {
-  const voices = await prisma.voice.findMany({
-    take: 6,
-    orderBy: { createdAt: 'desc' },
-  });
+export default function HomePage() {
+  const featuredVoices = voices.slice(0, 6);
 
   return (
     <>
       <Hero />
       <VoiceGrid
-        voices={voices}
+        voices={featuredVoices}
         title="Featured Voice Talent"
         subtitle="Discover our top-rated voice professionals"
       />

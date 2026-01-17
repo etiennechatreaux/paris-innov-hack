@@ -1,13 +1,21 @@
-import { PrismaClient } from '@prisma/client';
-import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
+export interface Voice {
+  id: string;
+  name: string;
+  email: string;
+  languages: string;
+  styles: string;
+  pricePerHour: number;
+  audioSamplePath: string;
+  description: string;
+  gender: string;
+  avatarUrl: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
-// Use the same database path as prisma.config.ts
-const dbUrl = process.env.DATABASE_URL || 'file:./prisma/dev.db';
-const adapter = new PrismaBetterSqlite3({ url: dbUrl });
-const prisma = new PrismaClient({ adapter });
-
-const voices = [
+export const voices: Voice[] = [
   {
+    id: 'sarah-mitchell',
     name: 'Sarah Mitchell',
     email: 'sarah.mitchell@voicehub.com',
     languages: JSON.stringify(['English', 'French']),
@@ -17,8 +25,11 @@ const voices = [
     description: 'Warm and engaging voice with over 10 years of experience in commercial and educational content. Known for clear articulation and friendly tone that connects with audiences.',
     gender: 'female',
     avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-01'),
+    updatedAt: new Date('2024-01-01'),
   },
   {
+    id: 'marcus-chen',
     name: 'Marcus Chen',
     email: 'marcus.chen@voicehub.com',
     languages: JSON.stringify(['English', 'Mandarin']),
@@ -28,8 +39,11 @@ const voices = [
     description: 'Deep, authoritative voice perfect for documentaries and narration. Bilingual in English and Mandarin with experience in international productions.',
     gender: 'male',
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-02'),
+    updatedAt: new Date('2024-01-02'),
   },
   {
+    id: 'elena-rodriguez',
     name: 'Elena Rodriguez',
     email: 'elena.rodriguez@voicehub.com',
     languages: JSON.stringify(['English', 'Spanish', 'Portuguese']),
@@ -39,8 +53,11 @@ const voices = [
     description: 'Versatile trilingual voice artist specializing in character work and commercials. Brings energy and authenticity to every project.',
     gender: 'female',
     avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-03'),
+    updatedAt: new Date('2024-01-03'),
   },
   {
+    id: 'james-williams',
     name: 'James Williams',
     email: 'james.williams@voicehub.com',
     languages: JSON.stringify(['English']),
@@ -50,8 +67,11 @@ const voices = [
     description: 'Award-winning audiobook narrator with a rich, captivating voice. Specializes in fiction and long-form content with excellent pacing.',
     gender: 'male',
     avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-04'),
+    updatedAt: new Date('2024-01-04'),
   },
   {
+    id: 'yuki-tanaka',
     name: 'Yuki Tanaka',
     email: 'yuki.tanaka@voicehub.com',
     languages: JSON.stringify(['English', 'Japanese']),
@@ -61,8 +81,11 @@ const voices = [
     description: 'Bright, expressive voice ideal for animation and educational content. Native Japanese speaker with perfect American English.',
     gender: 'female',
     avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-05'),
+    updatedAt: new Date('2024-01-05'),
   },
   {
+    id: 'david-muller',
     name: 'David Müller',
     email: 'david.muller@voicehub.com',
     languages: JSON.stringify(['English', 'German']),
@@ -72,8 +95,11 @@ const voices = [
     description: 'Professional bilingual voice with a sophisticated European sound. Extensive experience in corporate and documentary projects.',
     gender: 'male',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-06'),
+    updatedAt: new Date('2024-01-06'),
   },
   {
+    id: 'sofia-laurent',
     name: 'Sofia Laurent',
     email: 'sofia.laurent@voicehub.com',
     languages: JSON.stringify(['French', 'English']),
@@ -83,8 +109,11 @@ const voices = [
     description: 'Elegant French voice with impeccable English. Specializes in literary narration and luxury brand content.',
     gender: 'female',
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-07'),
+    updatedAt: new Date('2024-01-07'),
   },
   {
+    id: 'alex-kim',
     name: 'Alex Kim',
     email: 'alex.kim@voicehub.com',
     languages: JSON.stringify(['English', 'Korean']),
@@ -94,8 +123,11 @@ const voices = [
     description: 'Fresh, modern voice perfect for podcasts and digital content. Brings authenticity and relatability to every read.',
     gender: 'non-binary',
     avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-08'),
+    updatedAt: new Date('2024-01-08'),
   },
   {
+    id: 'isabella-rossi',
     name: 'Isabella Rossi',
     email: 'isabella.rossi@voicehub.com',
     languages: JSON.stringify(['English', 'Italian']),
@@ -105,8 +137,11 @@ const voices = [
     description: 'Passionate and expressive voice with Italian flair. Excellent for character work and emotive commercial content.',
     gender: 'female',
     avatarUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-09'),
+    updatedAt: new Date('2024-01-09'),
   },
   {
+    id: 'thomas-anderson',
     name: 'Thomas Anderson',
     email: 'thomas.anderson@voicehub.com',
     languages: JSON.stringify(['English']),
@@ -116,8 +151,11 @@ const voices = [
     description: 'Clear, trustworthy voice ideal for educational and documentary content. Known for making complex topics accessible.',
     gender: 'male',
     avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-10'),
+    updatedAt: new Date('2024-01-10'),
   },
   {
+    id: 'marie-dubois',
     name: 'Marie Dubois',
     email: 'marie.dubois@voicehub.com',
     languages: JSON.stringify(['French', 'English']),
@@ -127,8 +165,11 @@ const voices = [
     description: 'Sophisticated voice with a gentle French accent. Premier choice for literary audiobooks and premium narration.',
     gender: 'female',
     avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-11'),
+    updatedAt: new Date('2024-01-11'),
   },
   {
+    id: 'chris-johnson',
     name: 'Chris Johnson',
     email: 'chris.johnson@voicehub.com',
     languages: JSON.stringify(['English']),
@@ -138,55 +179,7 @@ const voices = [
     description: 'Friendly, conversational voice perfect for podcasts and casual commercial content. Great at connecting with younger audiences.',
     gender: 'male',
     avatarUrl: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop&crop=face',
+    createdAt: new Date('2024-01-12'),
+    updatedAt: new Date('2024-01-12'),
   },
 ];
-
-async function main() {
-  console.log('Seeding database...');
-  console.log('Database URL:', dbUrl);
-
-  // First, create the table if it doesn't exist
-  await prisma.$executeRawUnsafe(`
-    CREATE TABLE IF NOT EXISTS "Voice" (
-      "id" TEXT NOT NULL PRIMARY KEY,
-      "name" TEXT NOT NULL,
-      "email" TEXT NOT NULL,
-      "languages" TEXT NOT NULL,
-      "styles" TEXT NOT NULL,
-      "pricePerHour" INTEGER NOT NULL,
-      "audioSamplePath" TEXT NOT NULL,
-      "description" TEXT NOT NULL,
-      "gender" TEXT NOT NULL,
-      "avatarUrl" TEXT,
-      "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-      "updatedAt" DATETIME NOT NULL
-    )
-  `);
-
-  await prisma.$executeRawUnsafe(`
-    CREATE UNIQUE INDEX IF NOT EXISTS "Voice_email_key" ON "Voice"("email")
-  `);
-
-  for (const voice of voices) {
-    const id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    const now = new Date().toISOString();
-
-    await prisma.$executeRawUnsafe(`
-      INSERT OR REPLACE INTO "Voice" ("id", "name", "email", "languages", "styles", "pricePerHour", "audioSamplePath", "description", "gender", "avatarUrl", "createdAt", "updatedAt")
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `, id, voice.name, voice.email, voice.languages, voice.styles, voice.pricePerHour, voice.audioSamplePath, voice.description, voice.gender, voice.avatarUrl, now, now);
-
-    console.log(`Created voice: ${voice.name}`);
-  }
-
-  console.log('Seeding complete!');
-}
-
-main()
-  .catch((e) => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
