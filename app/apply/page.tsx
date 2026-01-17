@@ -6,6 +6,8 @@ import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
+import { VoiceRecordingModal } from '@/components/VoiceRecordingModal';
+import { READING_TEXTS, ReadingText } from '@/data/reading-texts';
 
 const LANGUAGES = [
   { value: 'English', label: 'English' },
@@ -40,6 +42,8 @@ export default function ApplyPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
   const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
+  const [recordings, setRecordings] = useState<Record<string, Blob>>({});
+  const [selectedText, setSelectedText] = useState<ReadingText | null>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,6 +52,11 @@ export default function ApplyPage() {
     const formData = new FormData(e.currentTarget);
     formData.set('languages', JSON.stringify(selectedLanguages));
     formData.set('styles', JSON.stringify(selectedStyles));
+
+    // Add voice recordings to FormData
+    Object.entries(recordings).forEach(([textId, blob]) => {
+      formData.append(`recording_${textId}`, blob, `recording_${textId}.webm`);
+    });
 
     try {
       const response = await fetch('/api/apply', {
@@ -81,6 +90,10 @@ export default function ApplyPage() {
         ? prev.filter((s) => s !== style)
         : [...prev, style]
     );
+  };
+
+  const handleSaveRecording = (textId: string, blob: Blob) => {
+    setRecordings((prev) => ({ ...prev, [textId]: blob }));
   };
 
   return (
@@ -211,6 +224,85 @@ export default function ApplyPage() {
               />
             </div>
 
+            {/* Voice Recordings */}
+            <div className="space-y-3 pt-4 border-t border-[var(--border)]">
+              <div>
+                <label className="block text-sm font-medium text-[var(--foreground)]">
+                  Voice Recordings
+                </label>
+                <p className="text-sm text-[var(--muted)]">
+                  Record yourself reading the following texts to showcase your voice.
+                </p>
+              </div>
+              <div className="space-y-2">
+                {READING_TEXTS.map((text) => {
+                  const isRecorded = !!recordings[text.id];
+                  return (
+                    <button
+                      key={text.id}
+                      type="button"
+                      onClick={() => setSelectedText(text)}
+                      className={`w-full flex items-center justify-between px-4 py-3 text-left border rounded-[var(--radius-sm)] transition-colors ${
+                        isRecorded
+                          ? 'bg-green-50 border-green-300 hover:bg-green-100'
+                          : 'border-[var(--border)] hover:border-[var(--muted)] hover:bg-[var(--accent)]'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-lg">
+                          {isRecorded ? (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="w-5 h-5 text-green-600"
+                            >
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                          ) : (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="w-5 h-5 text-[var(--muted)]"
+                            >
+                              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                              <line x1="12" x2="12" y1="19" y2="22" />
+                            </svg>
+                          )}
+                        </span>
+                        <div>
+                          <span className="font-medium text-sm">
+                            {text.title}
+                          </span>
+                          <span className="text-sm text-[var(--muted)] ml-2">
+                            ({text.estimatedDuration})
+                          </span>
+                        </div>
+                      </div>
+                      <span className={`text-xs px-2 py-1 rounded-[var(--radius-full)] ${
+                        isRecorded
+                          ? 'bg-green-200 text-green-800'
+                          : 'bg-[var(--accent)] text-[var(--muted)]'
+                      }`}>
+                        {isRecorded ? 'Recorded' : 'Not recorded'}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Submit */}
             <Button
               type="submit"
@@ -222,6 +314,17 @@ export default function ApplyPage() {
           </form>
         </CardContent>
       </Card>
+
+      {/* Voice Recording Modal */}
+      {selectedText && (
+        <VoiceRecordingModal
+          isOpen={!!selectedText}
+          onClose={() => setSelectedText(null)}
+          text={selectedText}
+          onSave={(blob) => handleSaveRecording(selectedText.id, blob)}
+          existingRecording={recordings[selectedText.id]}
+        />
+      )}
     </div>
   );
 }
