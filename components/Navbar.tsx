@@ -1,7 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Button } from './ui/Button';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Navbar() {
+  const t = useTranslations('nav');
+
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-[var(--border)] bg-white/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -34,28 +40,31 @@ export function Navbar() {
               href="/voices"
               className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
             >
-              Browse Voices
+              {t('browseVoices')}
             </Link>
             <Link
               href="/apply"
               className="text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
             >
-              For Talent
+              {t('forTalent')}
             </Link>
           </div>
 
-          {/* CTA */}
-          <div className="flex items-center gap-3">
-            <Link href="/apply">
-              <Button variant="outline" size="sm">
-                Join as Talent
-              </Button>
-            </Link>
-            <Link href="/voices">
-              <Button size="sm">
-                Find Voice Talent
-              </Button>
-            </Link>
+          {/* CTA + Language Switcher */}
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <div className="flex items-center gap-3">
+              <Link href="/apply">
+                <Button variant="outline" size="sm">
+                  {t('joinAsTalent')}
+                </Button>
+              </Link>
+              <Link href="/voices">
+                <Button size="sm">
+                  {t('findVoiceTalent')}
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

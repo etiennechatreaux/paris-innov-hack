@@ -1,6 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
+  const t = useTranslations('footer');
+
   return (
     <footer className="border-t border-[var(--border)] bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
@@ -26,23 +31,23 @@ export function Footer() {
             </div>
             <span className="font-medium">VoiceHub</span>
             <span className="text-[var(--muted)] text-sm ml-2">
-              The marketplace for voice talent
+              {t('tagline')}
             </span>
           </div>
 
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-[var(--muted)]">
             <Link href="/voices" className="hover:text-[var(--foreground)] transition-colors">
-              Browse Voices
+              {t('browseVoices')}
             </Link>
             <Link href="/apply" className="hover:text-[var(--foreground)] transition-colors">
-              Become a Voice
+              {t('becomeAVoice')}
             </Link>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-[var(--border)] text-center text-sm text-[var(--muted)]">
-          <p>&copy; {new Date().getFullYear()} VoiceHub. Built for Paris Innovation Hackathon.</p>
+          <p>&copy; {new Date().getFullYear()} {t('copyright')}</p>
         </div>
       </div>
     </footer>

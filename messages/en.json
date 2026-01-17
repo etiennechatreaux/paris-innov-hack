@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "browseVoices": "Browse Voices",
+    "forTalent": "For Talent",
+    "joinAsTalent": "Join as Talent",
+    "findVoiceTalent": "Find Voice Talent"
+  },
+  "hero": {
+    "averagePay": "Average pay",
+    "voiceRecorded": "Voice recorded",
+    "dailyPayouts": "Daily payouts",
+    "title": "Shape the future of voice",
+    "subtitle": "Connect with professional voice talent from around the world. Commercials, audiobooks, e-learning, and more.",
+    "browseVoiceTalent": "Browse Voice Talent",
+    "joinAsVoiceTalent": "Join as Voice Talent"
+  },
+  "footer": {
+    "tagline": "The marketplace for voice talent",
+    "browseVoices": "Browse Voices",
+    "becomeAVoice": "Become a Voice",
+    "copyright": "VoiceHub. Built for Paris Innovation Hackathon."
+  }
+}

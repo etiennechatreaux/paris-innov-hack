@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LocaleProvider } from "@/components/LocaleProvider";
+import enMessages from "@/messages/en.json";
+import frMessages from "@/messages/fr.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +22,11 @@ export const metadata: Metadata = {
   description: "Find and hire professional voice talent for your projects. The premier marketplace connecting businesses with voice actors worldwide.",
 };
 
+const messages = {
+  en: enMessages,
+  fr: frMessages,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,9 +37,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LocaleProvider messages={messages}>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );

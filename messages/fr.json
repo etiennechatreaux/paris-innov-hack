@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "browseVoices": "Parcourir les voix",
+    "forTalent": "Pour les talents",
+    "joinAsTalent": "Devenir talent",
+    "findVoiceTalent": "Trouver un talent"
+  },
+  "hero": {
+    "averagePay": "Salaire moyen",
+    "voiceRecorded": "Voix enregistrées",
+    "dailyPayouts": "Paiements quotidiens",
+    "title": "Façonnez l'avenir de la voix",
+    "subtitle": "Connectez-vous avec des talents vocaux professionnels du monde entier. Publicités, livres audio, e-learning et plus encore.",
+    "browseVoiceTalent": "Parcourir les talents",
+    "joinAsVoiceTalent": "Devenir talent vocal"
+  },
+  "footer": {
+    "tagline": "La marketplace des talents vocaux",
+    "browseVoices": "Parcourir les voix",
+    "becomeAVoice": "Devenir une voix",
+    "copyright": "VoiceHub. Créé pour le Paris Innovation Hackathon."
+  }
+}
