@@ -4,11 +4,10 @@ export interface Voice {
   email: string;
   languages: string;
   styles: string;
-  pricePerMinute: number;
+  pricePerHour: number;
   audioSamplePath: string;
   description: string;
   gender: string;
-  age: number;
   avatarUrl: string | null;
   createdAt: Date;
   updatedAt: Date;
@@ -27,7 +26,7 @@ export interface VoiceApplication {
   email: string;
   languages: string[];
   styles: string[];
-  pricePerMinute: number;
+  pricePerHour: number;
   audioSamplePath: string;
   description: string;
   gender: string;

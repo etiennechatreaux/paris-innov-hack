@@ -1,5 +1,5 @@
 export function formatPrice(cents: number): string {
-  return `${(cents / 100).toFixed(0)}€`;
+  return `$${(cents / 100).toFixed(0)}`;
 }
 
 export function parseJsonArray(jsonString: string): string[] {
