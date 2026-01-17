@@ -7,7 +7,7 @@ export function Hero() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--accent)] to-transparent h-[600px] -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-32 md:pt-28 md:pb-40">
         <div className="max-w-3xl mx-auto text-center">
           {/* Stats Bar */}
           <div className="inline-flex items-center gap-6 px-6 py-3 mb-6 text-sm font-medium bg-white border border-[var(--border)] rounded-[var(--radius-full)] shadow-[var(--shadow-sm)]">
