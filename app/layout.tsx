@@ -16,8 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VoiceHub - Voice Talent Marketplace",
+  title: "Vox - Voice Talent Marketplace",
   description: "Find and hire professional voice talent for your projects. The premier marketplace connecting businesses with voice actors worldwide.",
+  icons: {
+    icon: '/logo.svg',
+  },
 };
 
 const messages = {

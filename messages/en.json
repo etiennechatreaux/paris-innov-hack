@@ -25,7 +25,7 @@
     "tagline": "The marketplace for voice talent",
     "browseVoices": "Browse Voices",
     "becomeAVoice": "Become a Voice",
-    "copyright": "VoiceHub. Built for Paris Innovation Hackathon."
+    "copyright": "Vox. Built for Paris Innovation Hackathon."
   },
   "earnings": {
     "title": "Earnings",
@@ -71,7 +71,7 @@
     "linkedin": "LinkedIn",
     "copy": "Copy",
     "qrCode": "QR Code",
-    "shareMessage": "Join VoiceHub, the marketplace for voice talent! Sign up with my link and we both get rewards.",
+    "shareMessage": "Join Vox, the marketplace for voice talent! Sign up with my link and we both get rewards.",
     "stats": {
       "invitesSent": "Invites Sent",
       "signUps": "Sign-ups",

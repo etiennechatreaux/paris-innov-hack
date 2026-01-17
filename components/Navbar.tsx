@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Button } from './ui/Button';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { VoxLogo } from './VoxLogo';
 
 export function Navbar() {
   const t = useTranslations('nav');
@@ -15,23 +16,9 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-[var(--primary)] rounded-lg flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                <line x1="12" x2="12" y1="19" y2="22" />
-              </svg>
+              <VoxLogo size={20} className="text-white" />
             </div>
-            <span className="font-semibold text-lg">VoiceHub</span>
+            <span className="font-semibold text-lg">Vox</span>
           </Link>
 
           {/* Navigation */}
@@ -54,7 +41,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
             <div className="flex items-center gap-3">
-              <Link href="/apply" className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--muted)] transition-colors">
+              <Link href="/voices" className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--muted)] transition-colors">
                 Enterprise
               </Link>
               <Link href="/voices">

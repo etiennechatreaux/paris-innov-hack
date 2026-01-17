@@ -26,7 +26,7 @@ export default function SuccessPage() {
         Application Submitted!
       </h1>
       <p className="mt-4 text-[var(--muted)]">
-        Thank you for applying to VoiceHub. We&apos;ve received your application
+        Thank you for applying to Vox. We&apos;ve received your application
         and will review it shortly. You&apos;ll hear back from us within 2-3
         business days.
       </p>

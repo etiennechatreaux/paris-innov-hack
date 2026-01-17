@@ -29,7 +29,7 @@ export interface RecentReferral {
 }
 
 // Constants
-export const REFERRAL_BASE_URL = 'https://voicehub.com/join';
+export const REFERRAL_BASE_URL = 'https://vox.com/join';
 
 // Utility functions
 export function generateReferralLink(referralCode: string): string {
@@ -41,7 +41,7 @@ export function getShareUrls(referralLink: string, message: string) {
   const encodedMessage = encodeURIComponent(message);
 
   return {
-    email: `mailto:?subject=${encodeURIComponent('Join VoiceHub!')}&body=${encodedMessage}%0A%0A${encodedLink}`,
+    email: `mailto:?subject=${encodeURIComponent('Join Vox!')}&body=${encodedMessage}%0A%0A${encodedLink}`,
     whatsapp: `https://wa.me/?text=${encodedMessage}%20${encodedLink}`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedLink}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodedMessage}&url=${encodedLink}`,
