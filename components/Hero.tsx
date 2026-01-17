@@ -17,9 +17,9 @@ export function Hero() {
 
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--foreground)] leading-[1.1]">
-            Find the perfect voice
+            Shape the future
             <br />
-            <span className="text-[var(--muted)]">for your project</span>
+            <span className="text-[var(--muted)]">of voice</span>
           </h1>
 
           {/* Subheadline */}

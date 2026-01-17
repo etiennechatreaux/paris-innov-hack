@@ -1,5 +1,4 @@
 import { Hero } from '@/components/Hero';
-import { StatsBar } from '@/components/StatsBar';
 import { VoiceGrid } from '@/components/VoiceGrid';
 import { prisma } from '@/lib/db';
 
@@ -14,7 +13,6 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <StatsBar />
       <VoiceGrid
         voices={voices}
         title="Featured Voice Talent"
