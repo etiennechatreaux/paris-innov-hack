@@ -26,5 +26,78 @@
     "browseVoices": "Parcourir les voix",
     "becomeAVoice": "Devenir une voix",
     "copyright": "VoiceHub. Créé pour le Paris Innovation Hackathon."
+  },
+  "earnings": {
+    "title": "Revenus",
+    "totalEarningsTo": "Vos revenus totaux à ce jour sont de",
+    "exploreRoles": "Explorer les opportunités",
+    "noPaymentMethod": "Aucun moyen de paiement connecté",
+    "connectProvider": "Connecter un fournisseur",
+    "earningsOverTime": "Revenus au fil du temps",
+    "billingDate": "Date de facturation",
+    "contracts": "Contrats",
+    "allContracts": "Tous les contrats",
+    "type": "Type",
+    "allTypes": "Tous les types",
+    "voiceRecording": "Enregistrement vocal",
+    "royalties": "Royalties",
+    "bonus": "Bonus",
+    "earningsTotal": "Total des revenus",
+    "paidEarnings": "Revenus payés",
+    "pendingEarnings": "Revenus en attente",
+    "dataRefresh": "Données actualisées toutes les heures.",
+    "payments": "Paiements",
+    "downloadReport": "Télécharger le rapport",
+    "payoutDate": "Date de paiement",
+    "description": "Description",
+    "status": "Statut",
+    "hours": "Heures",
+    "earned": "Gagné",
+    "noPayments": "Aucun paiement pour le moment",
+    "statusPaid": "Payé",
+    "statusPending": "En attente",
+    "statusProcessing": "En cours"
+  },
+  "referral": {
+    "title": "Parrainage",
+    "subtitle": "Invitez vos amis et gagnez des récompenses",
+    "yourLink": "Votre lien de parrainage",
+    "copyLink": "Copier",
+    "copied": "Copié !",
+    "shareVia": "Partager via",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "copy": "Copier",
+    "qrCode": "Code QR",
+    "shareMessage": "Rejoignez VoiceHub, la marketplace des talents vocaux ! Inscrivez-vous avec mon lien et nous gagnons tous les deux des récompenses.",
+    "stats": {
+      "invitesSent": "Invitations envoyées",
+      "signUps": "Inscriptions",
+      "rewardsEarned": "Récompenses gagnées"
+    },
+    "progress": {
+      "title": "Progression vers le prochain palier",
+      "referMore": "Parrainez {count} de plus pour débloquer :",
+      "referrals": "{current} / {target} parrainages"
+    },
+    "milestones": {
+      "title": "Paliers",
+      "referral": "parrainage",
+      "referrals": "parrainages"
+    },
+    "leaderboard": {
+      "title": "Meilleurs parrains",
+      "you": "Vous",
+      "referrals": "parrainages"
+    },
+    "recent": {
+      "title": "Parrainages récents",
+      "pending": "En attente",
+      "signedUp": "Inscrit",
+      "rewarded": "Récompensé",
+      "noReferrals": "Pas encore de parrainages. Commencez à partager !"
+    }
   }
 }

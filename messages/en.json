@@ -26,5 +26,78 @@
     "browseVoices": "Browse Voices",
     "becomeAVoice": "Become a Voice",
     "copyright": "VoiceHub. Built for Paris Innovation Hackathon."
+  },
+  "earnings": {
+    "title": "Earnings",
+    "totalEarningsTo": "Your total earnings to date are",
+    "exploreRoles": "Explore open roles",
+    "noPaymentMethod": "No payment method connected",
+    "connectProvider": "Connect provider",
+    "earningsOverTime": "Earnings Over Time",
+    "billingDate": "Billing Date",
+    "contracts": "Contracts",
+    "allContracts": "All Contracts",
+    "type": "Type",
+    "allTypes": "All Types",
+    "voiceRecording": "Voice Recording",
+    "royalties": "Royalties",
+    "bonus": "Bonus",
+    "earningsTotal": "Earnings total",
+    "paidEarnings": "Paid Earnings",
+    "pendingEarnings": "Pending Earnings",
+    "dataRefresh": "Data refreshes every hour.",
+    "payments": "Payments",
+    "downloadReport": "Download Payment Report",
+    "payoutDate": "Payout date",
+    "description": "Description",
+    "status": "Status",
+    "hours": "Hours",
+    "earned": "Earned",
+    "noPayments": "No payments yet",
+    "statusPaid": "Paid",
+    "statusPending": "Pending",
+    "statusProcessing": "Processing"
+  },
+  "referral": {
+    "title": "Referral",
+    "subtitle": "Invite friends and earn rewards",
+    "yourLink": "Your Referral Link",
+    "copyLink": "Copy",
+    "copied": "Copied!",
+    "shareVia": "Share via",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "copy": "Copy",
+    "qrCode": "QR Code",
+    "shareMessage": "Join VoiceHub, the marketplace for voice talent! Sign up with my link and we both get rewards.",
+    "stats": {
+      "invitesSent": "Invites Sent",
+      "signUps": "Sign-ups",
+      "rewardsEarned": "Rewards Earned"
+    },
+    "progress": {
+      "title": "Progress to Next Milestone",
+      "referMore": "Refer {count} more to unlock:",
+      "referrals": "{current} / {target} referrals"
+    },
+    "milestones": {
+      "title": "Milestones",
+      "referral": "referral",
+      "referrals": "referrals"
+    },
+    "leaderboard": {
+      "title": "Top Referrers",
+      "you": "You",
+      "referrals": "referrals"
+    },
+    "recent": {
+      "title": "Recent Referrals",
+      "pending": "Pending",
+      "signedUp": "Signed Up",
+      "rewarded": "Rewarded",
+      "noReferrals": "No referrals yet. Start sharing!"
+    }
   }
 }
