@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/db';
 import { VoiceCard } from '@/components/VoiceCard';
 import { VoiceFilters } from '@/components/VoiceFilters';
-import { Voice } from '@prisma/client';
+import { Voice } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 

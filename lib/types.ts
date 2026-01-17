@@ -2,12 +2,12 @@ export interface Voice {
   id: string;
   name: string;
   email: string;
-  languages: string[];
-  styles: string[];
+  languages: string;
+  styles: string;
   pricePerHour: number;
   audioSamplePath: string;
   description: string;
-  gender: 'male' | 'female' | 'non-binary';
+  gender: string;
   avatarUrl: string | null;
   createdAt: Date;
   updatedAt: Date;
